@@ -94,7 +94,7 @@ class SortableFlatList extends Component {
         const lastElementMeasurements = this._measurements[data.length - 1]
         const sortedData = this.getSortedList(data, activeRow, spacerIndex)
 
-        // If user flings row up and lets go in the middle of an animation measurements can error out. 
+        // If user flings row up and lets go in the middle of an animation measurements can error out.
         // Give layout animations some time to complete and animate element into place before calling onMoveEnd
 
         // Spacers have different positioning depending on whether the spacer row is before or after the active row.
@@ -311,7 +311,7 @@ class SortableFlatList extends Component {
           scrollEnabled={this.state.activeRow === -1}
           ref={ref => this._flatList = ref}
           renderItem={this.renderItem}
-          extraData={this.state}
+          extraData={(index) => { index }}
           keyExtractor={keyExtractor || this.keyExtractor}
           onScroll={({ nativeEvent }) => this._scrollOffset = nativeEvent.contentOffset[horizontal ? 'x' : 'y']}
           scrollEventThrottle={16}
