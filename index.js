@@ -311,7 +311,7 @@ class SortableFlatList extends Component {
           scrollEnabled={this.state.activeRow === -1}
           ref={ref => this._flatList = ref}
           renderItem={this.renderItem}
-          extraData={(index) => { index }}
+          extraData={(index) => ({ index })}
           keyExtractor={keyExtractor || this.keyExtractor}
           onScroll={({ nativeEvent }) => this._scrollOffset = nativeEvent.contentOffset[horizontal ? 'x' : 'y']}
           scrollEventThrottle={16}
