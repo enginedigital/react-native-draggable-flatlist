@@ -114,7 +114,7 @@ class SortableFlatList extends Component {
           toValue: pos - (isAfterActive ? activeItemSize : 0),
           stiffness: 1000,
           damping: 500,
-          mass: 3,
+          mass: 1,
           useNativeDriver: true,
         }).start((() => {
           this._spacerIndex = -1
