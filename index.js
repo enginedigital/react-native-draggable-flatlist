@@ -166,8 +166,8 @@ class SortableFlatList extends Component {
     const hoverItemTopPosition = Math.max(0, this._move - (this._additionalOffset + this._containerOffset))
     const hoverItemBottomPosition = Math.min(this._containerSize, hoverItemTopPosition + rowSize)
     const fingerPosition = Math.max(0, this._move - this._containerOffset)
-    const shouldScrollUp = !isFirstItem && fingerPosition < (this._containerSize * scrollRatio)
-    const shouldScrollDown = !isLastItem && fingerPosition > (this._containerSize * (1 - scrollRatio))
+    const shouldScrollUp = fingerPosition < (this._containerSize * scrollRatio)
+    const shouldScrollDown = fingerPosition > (this._containerSize * (1 - scrollRatio))
     if (shouldScrollUp) this.scroll(-5, nextSpacerIndex)
     else if (shouldScrollDown) this.scroll(5, nextSpacerIndex)
 
